@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('welcome/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'es', 'fr'])) {
+        abort(400);
+    }
+    \Illuminate\Support\Facades\App::setLocale($locale);
 });
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/services', 'HomeController@services')->name('services');
+Route::get('/staff', 'HomeController@staff')->name('staff');
+Route::get('/contacts', 'HomeController@contacts')->name('contacts');
