@@ -1,9 +1,9 @@
-###Requirements
+### Requirements
 
 - XAMP / Apache
 - MySQL
 
-#####Run:
+##### Run:
 
 - **cp .env.example .env**
 - fill your MySQL port and host
