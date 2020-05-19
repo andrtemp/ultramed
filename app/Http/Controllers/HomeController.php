@@ -24,19 +24,40 @@ class HomeController extends Controller
         return view('home');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function services()
     {
         return view('services');
     }
 
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function staff()
     {
         return view('staff');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function contacts()
     {
         return view('contacts');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function book()
+    {
+        return view('book');
+    }
+
+    public function bookStore()
+    {
+        return redirect('/');
     }
 }

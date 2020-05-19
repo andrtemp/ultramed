@@ -10882,3 +10882,13 @@ a.text-dark:focus {
   }
 }
 
+.services__card {
+  margin: 10px;
+  width: 300px;
+}
+
+.services__card:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+

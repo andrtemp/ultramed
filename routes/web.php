@@ -27,3 +27,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/services', 'HomeController@services')->name('services');
 Route::get('/staff', 'HomeController@staff')->name('staff');
 Route::get('/contacts', 'HomeController@contacts')->name('contacts');
+Route::get('/book', 'HomeController@book')->name('book.form');
+Route::post('/book', 'HomeController@bookStore')->name('book.store');

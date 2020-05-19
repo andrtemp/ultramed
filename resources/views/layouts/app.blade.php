@@ -49,15 +49,14 @@
                             <a class="nav-link" href="{{ route('contacts') }}">{{ __('layout.contacts') }}</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="btn btn-success" href="{{ route('book.form') }}">{{ __('layout.book') }}</a>
+                        </li>
+
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('layout.login') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('layout.register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
