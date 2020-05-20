@@ -56,8 +56,19 @@ class HomeController extends Controller
         return view('book');
     }
 
-    public function bookStore()
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function bookStore(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'string',
+            'phone' => 'string'
+        ]);
+
+        \App\Request::create($data);
+
         return redirect('/');
     }
 }
