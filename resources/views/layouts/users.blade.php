@@ -28,7 +28,10 @@
     @break
     @case('patient')
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('services') }}">{{ __('layout.services') }}</a>
+        <a class="nav-link" href="{{ route('requests.schedule') }}">{{ __('layout.schedule') }}</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('patient.card') }}">{{ __('layout.card') }}</a>
     </li>
     @break
 @endswitch

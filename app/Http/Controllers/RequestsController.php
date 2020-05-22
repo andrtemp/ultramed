@@ -25,7 +25,17 @@ class RequestsController extends Controller
      */
     public function schedule()
     {
-        $records = Record::all();
+        $role = user_role();
+
+        switch ($role){
+            case 'patient':
+                $patient = Patient::where('user_id', current_user()->id)->first();
+                $records = Record::where('patient_id', $patient->id)->get();
+                break;
+            default:
+                $records = Record::all();
+                break;
+        }
 
         return view('requests.schedule', compact('records'));
     }

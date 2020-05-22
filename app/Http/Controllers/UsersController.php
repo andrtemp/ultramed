@@ -151,10 +151,21 @@ class UsersController extends Controller
      * Update the specified resource in storage.
      * @param  \Illuminate\Http\Request $request
      * @param  int                      $id
+     * @param  string                   $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $type, $id)
     {
+        $data = $request->validate([
+            'card' => 'string'
+        ]);
+
+        /** @var Patient $patient */
+        $patient = Patient::where('user_id', $id)->first();
+
+        $patient->card = $data['card'];
+        $patient->save();
+
         return redirect()->route('users.index', 'patient');
     }
 
@@ -166,5 +177,13 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function card(){
+        $user = current_user();
+        $patient = Patient::where('user_id', $user->id)->first();
+
+        return view('users.card', compact('patient'));
     }
 }

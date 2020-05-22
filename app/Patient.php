@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Patient
  * @method static create($data)
+ * @method static find($id)
+ * @property  $card
  * @package App
  */
 class Patient extends Model

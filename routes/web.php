@@ -34,6 +34,8 @@ Route::group(['prefix' => '{type}'], function () {
     Route::resource('/users', 'UsersController');
 });
 
+Route::get('/medical-card', 'UsersController@card')->name('patient.card');
+
 Route::get('/requests', 'RequestsController@index')->name('requests.index');
 Route::get('/schedule', 'RequestsController@schedule')->name('requests.schedule');
 Route::get('/requests/{id}', 'RequestsController@show')->name('requests.show');
