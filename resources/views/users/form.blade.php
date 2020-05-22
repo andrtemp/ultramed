@@ -31,10 +31,10 @@
                         <label for="position">{{ __('users.position') }}</label>
                         <input name="position" type="text" class="form-control" id="position" required/>
                     </div>
-                    <div class="form-group">
-                        <label for="photo">{{ __('users.photo') }}</label>
-                        <input name="photo" type="file" class="form-control" id="photo"/>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="photo">{{ __('users.photo') }}</label>--}}
+                        {{--<input name="photo" type="file" class="form-control" id="photo"/>--}}
+                    {{--</div>--}}
                     <div class="form-group">
                         <label for="text">{{ __('users.text') }}</label>
                         <textarea name="text" class="form-control" id="text"></textarea>
